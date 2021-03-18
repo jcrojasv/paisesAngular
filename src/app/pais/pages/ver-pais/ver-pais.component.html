@@ -4,7 +4,9 @@
   Espere por favor...
 </div>
 
-<ng-template #divPais>
+<ng-template #divPais
+  class="animate__animated animate__fadeIn"
+  >
   <div class="row">
     <div class="col-12">
       <h1>País: <small>{{ pais.name }}</small></h1>
@@ -21,14 +23,25 @@
       <h3>Información</h3>
       <ul class="list-group">
         <li class="list-group-item">
+          <b>Capital</b> {{ pais.capital }}
+        </li>
+        <li class="list-group-item">
           <b>Población</b> {{ pais.population | number }}
         </li>
+
         <li class="list-group-item">
-          <b>Código numérico</b> {{ pais.numericCode }}
+          <b>Código</b> {{ pais.alpha2Code }} / {{ pais.alpha3Code }}
         </li>
+
         <li class="list-group-item">
-          <b>Código alpha3</b> {{ pais.alpha3Code }}
+          <b>Moneda</b> ({{ pais.currencies[0].symbol }}) {{ pais.currencies[0].name }}
         </li>
+
+        <li class="list-group-item">
+          <b>Código Teléfono</b> +{{ pais.callingCodes[0] }}
+        </li>
+
+
       </ul>
     </div>
   </div>
